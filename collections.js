@@ -10,4 +10,4 @@ import { Meteor } from 'meteor/meteor';
 //   {title: "Writhe in pain", done: false},
 // ]
 
-Todo = new Mongo.Collection("todoList");
+export default Todo = new Mongo.Collection("todoList");

@@ -10,15 +10,16 @@ import "./main.css";
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import { withTracker } from 'meteor/react-meteor-data';
+// import clearCompleted from './Functions/clearCompleted'
 
 
 class App extends Component {
-  // use a constructor to instatiate
+  
   constructor() {
     super();
 
     // set the initial 'state'. if this variable changes update the virtual DOM
-
+    
     this.state= {
       todoList: [
         {title: "Get groceries", done: false},
@@ -30,7 +31,7 @@ class App extends Component {
   }
 
   updateTodos(todo, done) {
-    this.props.todoList[todo] = {
+    this.state.todoList[todo] = {
       done,
       title: this.state.todoList[todo].title 
     };
@@ -47,9 +48,7 @@ class App extends Component {
   addTodo(title, todoList) {
 
      Todo.insert({title: title, done: false})
-
     // let newState = [];
-
     // newState = newState.concat (
     //   {title: title,
     //     done: false},
@@ -71,9 +70,13 @@ class App extends Component {
 
 
    render() {
+     console.log("logging todo" , this.props.todoList)
+
       return (
       <div id="container">
+
         <HeaderComponent title="Todos"/>
+
         <InputComponent
         addTodo={this.addTodo.bind(this)} 
         todoList = {this.state.todoList}
@@ -88,18 +91,19 @@ class App extends Component {
          numTodos={this.state.todoList.length}
          countCompleted={this.countCompleted()}
          clearCompleted = {this.clearCompleted.bind(this)}/>
-      </div>
 
+      </div>
       );
    }
 }
 
 
-export default withTracker(() => {  
-  return { todoList: Todo.find().fetch()
+
+export default withTracker(({}) => {  
+  return { 
+    todoList: Todo.find({}).fetch()
   };
 })(App);
-
 
 Meteor.startup(() => {
   render(
