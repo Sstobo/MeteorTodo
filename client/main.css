@@ -1,0 +1,103 @@
+/* CSS declarations go here */
+
+h1,
+p {
+    font-family: Helvetica;
+    padding: 24px;
+}
+
+#container {
+    background-color: lightgray;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    border: 14px solid slategray;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    color: white;
+    margin: 0;
+    height: 60px;
+    width: 87%;
+    background: rgb(126, 87, 126);
+    text-align: center;
+}
+
+.new-todo {
+    width: 100%;
+    height: 70px;
+    background: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: grey;
+}
+
+.new-item-input {
+    background-color: lightgrey;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin: 12px;
+    height: 30px;
+}
+
+.list-component {
+    background: white;
+    width: 87%;
+}
+
+.list-item {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.list-button {
+    border: none;
+    color: none;
+}
+
+.fa-trash {
+    color: grey;
+    font-size: 20px;
+}
+
+.fa-trash:hover {
+    color: rgb(129, 76, 76);
+}
+
+.list-input {
+    margin: 12px;
+    border-radius: 4px;
+}
+
+.clear-button {
+    border: 1px solid rgb(105, 65, 105);
+    color: rgb(105, 65, 105);
+    padding: 8px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+    margin-bottom: 14px;
+}
+
+.fa-circle-thin {
+    position: relative;
+    right: 25px;
+}
+
+.count-text {
+    color: rgb(66, 66, 66);
+    font-size: 16px;
+    width: 40%;
+}
+
+.footer-div {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
